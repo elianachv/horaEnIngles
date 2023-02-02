@@ -1,0 +1,86 @@
+<div class="contenedor">
+  <h1>Hora en inglés</h1>
+  <div class="intrucciones">
+    <h2>Intrucciones</h2>
+    <ol>
+      <li>
+        Crea en tu computador un archivo <span class="enfasis"> .txt </span> En
+        las líneas impares dedebes colocar las horas y en las líneas pares los
+        minutos. Por jemplo:
+      </li>
+      <span class="ejemplo">
+        5 <br />
+        47 <br />
+        3 <br />
+        00 <br />
+      </span>
+      <li>
+        Haz clic en el botón seleccionar archivo y acontinuación selecciona el
+        archivo deseado en el explorador de archivos
+      </li>
+      <li>Haz clic en el botón procesar</li>
+      <li>¡¡Revisa tus resultados!!</li>
+    </ol>
+  </div>
+
+  <div class="carga">
+    <div class="botones">
+      <button
+        id="botonSeleccionar"
+        *ngIf="!archivo"
+        mat-raised-button
+        (click)="fileInput.click()"
+      >
+        Seleccionar archivo
+      </button>
+      <button
+        id="botonReiniciar"
+        mat-raised-button
+        *ngIf="archivo"
+        [disabled]="!archivo"
+        (click)="reset()"
+      >
+        Reiniciar
+      </button>
+      <button
+        id="botonCargar"
+        mat-raised-button
+        *ngIf="archivo"
+        [disabled]="!archivo"
+        (click)="subirArchivo(archivo)"
+      >
+        Procesar archivo
+      </button>
+    </div>
+
+    <input
+      #fileInput
+      type="file"
+      hidden
+      multiple
+      (change)="seleccionarArchivo($event)"
+    />
+    <span *ngIf="nombreArchivo">Archivo cargado: {{ nombreArchivo }}</span>
+  </div>
+
+  <div class="error">
+    <span *ngIf="error">{{ error }}</span>
+  </div>
+
+  <mat-card class="respuesta" *ngIf="respuesta">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Hora</th>
+          <th scope="col">Hora en inglés</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let rta of respuesta">
+        <tr>
+          <td>{{ rta.hora }}:{{ rta.minutos }}</td>
+          <td>{{ rta.resultado }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</div>
