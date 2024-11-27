@@ -1,0 +1,100 @@
+.contenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.intrucciones {
+  margin: auto;
+}
+
+.carga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+h1,
+h2,
+h3,
+.enfasis {
+  color: teal;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ejemplo {
+  border: solid teal 1px;
+  display: inline-block;
+  padding: 10px 50px 10px 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+
+#botonSeleccionar,
+#botonCargar {
+  background-color: teal;
+  padding: 10px;
+  color: white;
+  min-width: 200px;
+  margin: 0 10px;
+}
+
+#botonReiniciar {
+  background-color: white;
+  padding: 10px;
+  color: teal;
+  min-width: 200px;
+  margin: 0 10px;
+  border: teal solid 2px;
+}
+
+.error span {
+  color: red;
+  font-weight: bold;
+}
+
+.respuesta table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  font-family: sans-serif;
+  min-width: 450px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: solid teal 2px;
+}
+
+.respuesta table thead tr {
+  background-color: teal;
+  color: #ffffff;
+  text-align: middle;
+}
+
+.respuesta table th,
+.respuesta table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.respuesta table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.respuesta table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.respuesta table tbody tr:last-of-type {
+  border-bottom: 2px solid teal;
+}
